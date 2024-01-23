@@ -1,0 +1,85 @@
+arm_1_joint_controller:
+  type: "velocity_controllers/JointVelocityController"
+  joint: arm_1_joint
+
+arm_2_joint_controller:
+  type: "velocity_controllers/JointVelocityController"
+  joint: arm_2_joint
+
+endpoint_bracket_joint_controller:
+  type: "velocity_controllers/JointVelocityController"
+  joint: endpoint_bracket_joint
+
+rod_1_joint_controller:
+  type: "velocity_controllers/JointVelocityController"
+  joint: rod_1_joint
+
+rod_2_joint_controller:
+  type: "velocity_controllers/JointVelocityController"
+  joint: rod_2_joint
+
+rod_3_joint_controller:
+  type: "velocity_controllers/JointVelocityController"
+  joint: rod_3_joint
+
+rod_joint_controller:
+  type: "velocity_controllers/JointVelocityController"
+  joint: rod_joint
+
+triangle_joint_controller:
+  type: "velocity_controllers/JointVelocityController"
+  joint: triangle_joint
+
+gripper_m_joint_controller:
+  type: "effort_controllers/JointPositionController"
+  joint: gripper_m_joint
+  pid: {p: 100.0, i: 0.01, d: 1.0}
+
+
+left_gripper_joint_1_controller:
+  type: "velocity_controllers/JointVelocityController"
+  joint: left_gripper_joint_1
+
+left_gripper_joint_2_controller:
+  type: "velocity_controllers/JointVelocityController"
+  joint: left_gripper_joint_2
+
+left_gripper_joint_4_controller:
+  type: "velocity_controllers/JointVelocityController"
+  joint: left_gripper_joint_4
+
+left_gripper_joint_6_controller:
+  type: "velocity_controllers/JointVelocityController"
+  joint: left_gripper_joint_6
+
+left_gripper_joint_7_controller:
+  type: "velocity_controllers/JointVelocityController"
+  joint: left_gripper_joint_7
+
+left_gripper_joint_5_controller:
+  type: "velocity_controllers/JointVelocityController"
+  joint: left_gripper_joint_5
+
+right_gripper_joint_1_controller:
+  type: "velocity_controllers/JointVelocityController"
+  joint: right_gripper_joint_1
+
+right_gripper_joint_2_controller:
+  type: "velocity_controllers/JointVelocityController"
+  joint: right_gripper_joint_2
+
+right_gripper_joint_4_controller:
+  type: "velocity_controllers/JointVelocityController"
+  joint: right_gripper_joint_4
+
+right_gripper_joint_6_controller:
+  type: "velocity_controllers/JointVelocityController"
+  joint: right_gripper_joint_6
+
+right_gripper_joint_7_controller:
+  type: "velocity_controllers/JointVelocityController"
+  joint: right_gripper_joint_7
+
+right_gripper_joint_5_controller:
+  type: "velocity_controllers/JointVelocityController"
+  joint: right_gripper_joint_5

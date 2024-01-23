@@ -1,0 +1,68 @@
+<launch>
+    <arg name="paused" default="false"/>
+    <arg name="use_sim_time" default="true"/>
+    <arg name="gui" default="true"/>
+    <arg name="debug" default="false"/>
+
+    <!-- 运行gazebo仿真环境 -->
+    <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="world_name" value="$(find my_robot_controller)/deepsoccer.world"/>
+        <arg name="debug" value="$(arg debug)" />
+        <arg name="gui" value="$(arg gui)" />
+        <arg name="paused" value="$(arg paused)"/>
+        <arg name="use_sim_time" value="$(arg use_sim_time)"/>
+    </include>
+
+
+
+
+<group ns="robot1">
+  <param name="tf_prefix" value="robot1_tf" />
+  <include file="$(find my_robot_controller)/launch/robomasterEP.launch" >
+    <arg name="init_pose" value="-x -1.3 -y 1.0 -z 0  -R 0 -P 0 -Y 0.1" />
+    <arg name="robot_name"  value="Robot1" />
+  </include>
+</group>
+
+<group ns="robot2">
+  <param name="tf_prefix" value="robot2_tf" />
+  <include file="$(find my_robot_controller)/launch/robomasterEP.launch" >
+    <arg name="init_pose" value="-x -1.5 -y -1.2 -z 0  -R 0 -P 0 -Y 0.2" />
+    <arg name="robot_name"  value="Robot2" />
+  </include>
+</group>
+
+<group ns="robot3">
+  <param name="tf_prefix" value="robot3_tf" />
+  <include file="$(find my_robot_controller)/launch/robomasterEP.launch" >
+    <arg name="init_pose" value="-x 1.3 -y 1.3 -z 0 -R 0 -P 0 -Y 3.1" />
+    <arg name="robot_name"  value="Robot3" />
+  </include>
+</group>
+
+<group ns="robot4">
+  <param name="tf_prefix" value="robot4_tf" />
+  <include file="$(find my_robot_controller)/launch/robomasterEP.launch" >
+    <arg name="init_pose" value="-x 1.2 -y -0.8 -z 0 -R 0 -P 0 -Y 3.3" />
+    <arg name="robot_name"  value="Robot4" />
+  </include>
+</group>
+
+<group ns="darwin1">
+  <param name="tf_prefix" value="darwin1_tf" />
+  <include file="$(find my_robot_controller)/launch/darwin.launch" >
+    <arg name="init_pose" value="-x -2.5 -y 0 -z 0.3417 -R 0 -P 0 -Y 0.1" />
+    <arg name="robot_name"  value="darwin1" />
+  </include>
+</group>
+
+<group ns="darwin2">
+  <param name="tf_prefix" value="darwin2_tf" />
+  <include file="$(find my_robot_controller)/launch/darwin.launch" >
+    <arg name="init_pose" value="-x 2.5 -y 0 -z 0.3417 -R 0 -P 0 -Y 3.2" />
+    <arg name="robot_name"  value="darwin2" />
+  </include>
+</group>
+
+</launch>
+

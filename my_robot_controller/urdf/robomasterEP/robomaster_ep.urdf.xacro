@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<robot name="robomaster_ep" xmlns:xacro="http://playerstage.sourceforge.net/gazebo/xmlschema/#xacro">
+
+  <xacro:arg name="name" default=""/>
+  <xacro:property name="_name" value="$(arg name)"/>
+  <xacro:if value="${_name != ''}">
+    <xacro:property name="tf_prefix" value="${_name}/"/>
+  </xacro:if>
+  <xacro:if value="${_name == ''}">
+    <xacro:property name="tf_prefix" value=""/>
+  </xacro:if>
+  <xacro:arg name="camera_yaw" default="0.0"/>
+
+  <xacro:include filename="base.urdf.xacro"/>
+  <xacro:include filename="arm.urdf.xacro"/>
+  <xacro:include filename="gripper.urdf.xacro"/>
+
+  
+
+  <xacro:base tf_prefix="${tf_prefix}"/>
+  <xacro:arm tf_prefix="${tf_prefix}"/>
+  <xacro:gripper tf_prefix="${tf_prefix}"/>
+
+
+  <gazebo>
+        <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+        </plugin>
+  </gazebo>
+
+  <gazebo>
+    <plugin name="object_controller" filename="libgazebo_ros_planar_move.so">
+      <commandTopic>cmd_vel</commandTopic>
+      <odometryTopic>odom</odometryTopic>
+      <odometryFrame>odom</odometryFrame>
+      <odometryRate>20.0</odometryRate>
+      <robotBaseFrame>base_link</robotBaseFrame>
+    </plugin>
+  </gazebo>	
+</robot>

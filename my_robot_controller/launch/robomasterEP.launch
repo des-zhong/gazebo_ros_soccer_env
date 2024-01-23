@@ -1,0 +1,43 @@
+<launch>
+    <arg name="robot_name"/>
+    <arg name="init_pose"/>
+
+    <param name="robot_description"
+        command="$(find xacro)/xacro
+        $(find my_robot_controller)/urdf/robomasterEP/robomaster_ep.urdf.xacro"
+    />
+    <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model"
+     args="$(arg init_pose) -urdf -param robot_description -model $(arg robot_name)"
+     respawn="false" output="screen" />
+
+    <node pkg="robot_state_publisher" type="robot_state_publisher" 
+          name="robot_state_publisher" output="screen"/>
+    
+    <rosparam file="$(find my_robot_controller)/config/robomasterEP.yaml" command="load"/>
+
+    <node name="bot_controller_spawner"
+        pkg="controller_manager"
+        type="spawner"
+        args="
+            endpoint_bracket_joint_controller
+            rod_1_joint_controller
+            rod_2_joint_controller
+            rod_3_joint_controller
+            rod_joint_controller
+            triangle_joint_controller
+            gripper_m_joint_controller
+            left_gripper_joint_1_controller
+            left_gripper_joint_2_controller
+            left_gripper_joint_4_controller
+            left_gripper_joint_6_controller
+            left_gripper_joint_7_controller
+            left_gripper_joint_5_controller
+            right_gripper_joint_1_controller
+            right_gripper_joint_2_controller
+            right_gripper_joint_4_controller
+            right_gripper_joint_6_controller
+            right_gripper_joint_7_controller
+            right_gripper_joint_5_controller
+            " 
+    />
+</launch>
