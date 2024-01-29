@@ -99,7 +99,7 @@ def main():
     walker2 = Walker(darwin2)
     rate = rospy.Rate(10)
     while not rospy.is_shutdown():
-        twist_msg1.linear.x = (0 - x) / 10
+        twist_msg1.linear.x = (1 - x) / 10
         twist_msg1.linear.y = (0 - y) / 10
         twist_msg1.angular.z = (0 - theta) / 10
         move_pub1.publish(twist_msg1)

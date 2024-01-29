@@ -20,7 +20,7 @@
     <!-- RoboCup 2015 MSL Field -->
     <include>
         <pose>0 0 0 0 0 0</pose>
-        <uri>file:///home/des/ws/src/my_robot_controller/deepsoccer_gazebo/models/RoboCup15_MSL_Field</uri>
+        <uri>model://deepsoccer_gazebo/models/RoboCup15_MSL_Field</uri>
         <name>field</name>
         <static>true</static>
     </include>
@@ -28,7 +28,7 @@
     <!-- RoboCup 2015 MSL Goal left -->
     <include>
         <pose>-3 0 0.01 0 0 3.14 </pose>
-        <uri>file:///home/des/ws/src/my_robot_controller/deepsoccer_gazebo/models/RoboCup15_MSL_Goal</uri>
+        <uri>model://deepsoccer_gazebo/models/RoboCup15_MSL_Goal</uri>
         <name>left_goal</name>
         <static>true</static>
     </include>
@@ -36,7 +36,7 @@
     <!-- RoboCup 2015 MSL Goal right -->
     <include>
         <pose>3 0 0.01 0 0 0 </pose>
-        <uri>file:///home/des/ws/src/my_robot_controller/deepsoccer_gazebo/models/RoboCup15_MSL_Goal</uri>
+        <uri>model://deepsoccer_gazebo/models/RoboCup15_MSL_Goal</uri>
         <name>right_goal</name>
         <static>true</static>
     </include>
@@ -44,7 +44,7 @@
     <!-- RoboCup 2015 MSL Football -->
     <include>
       <pose>0 0 0.12 0 0 0</pose>
-      <uri>file:///home/des/ws/src/my_robot_controller/deepsoccer_gazebo/models/football</uri>
+      <uri>model://deepsoccer_gazebo/models/football</uri>
       <name>football</name>
       <static>false</static>
     </include>
