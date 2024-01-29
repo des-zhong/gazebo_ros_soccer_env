@@ -65,6 +65,5 @@
             </contact>
          </sensor>
       </link>
-      <plugin name="ball_gazebo" filename="libball_gazebo.so" />
    </model>
 </sdf>

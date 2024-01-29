@@ -19,15 +19,9 @@ class Darwin:
         self.angles=None
         
         self._sub_joints=rospy.Subscriber(ns+"joint_states",JointState,self._cb_joints,queue_size=1)
-        rospy.loginfo("Waiting for joints to be populated...")
         while not rospy.is_shutdown():
             if self.joints is not None: break
-            rospy.sleep(0.1)            
-            rospy.loginfo("Waiting for joints to be populated...")
-        rospy.loginfo("Joints populated")
-        
-        
-        rospy.loginfo("Creating joint command publishers")
+            rospy.sleep(0.1)
         self._pub_joints={}
         for j in self.joints:
             p=rospy.Publisher(self.ns+j+"_position_controller/command",Float64, queue_size=1000)
