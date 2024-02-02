@@ -33,4 +33,23 @@ roslaunch my_robot_controller load_env.launch
 ```
 roslaunch my_robot_controller robot_start.launch
 ```
+或者
+```
+rosrun my_robot_controller robot_controller.py
+```
+
+
+训练时：直接使用脚本train_mappo.py（不需要手动launch文件）
+首先杀死正在运行的ros进程(每次运行此脚本都需要进行一次，可能会有报错，也可以直接使用此命令终止训练)：
+```
+killall -9 rosout roslaunch rosmaster gzserver nodelet robot_state_publisher gzclient python python3
+```
+然后
+```
+python train_mappo.py
+```
+关闭可视化可增加训练速度：load_env.launch 中的gui选项变成false即可：
+```
+<arg name="gui" default="false"/>
+```
 
