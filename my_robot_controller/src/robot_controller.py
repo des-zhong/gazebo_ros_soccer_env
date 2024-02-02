@@ -13,13 +13,13 @@ import rospy
 from darwin import Darwin
 from walker import Walker
 
+# STATE为存储了所有机器人的状态的全局字典，键值包括'robot1'...'darwin1'，'football'等（还会包括一些不需要的值比如left_gate等）
+# 如若希望知道darwin2机器人的状态，调用STATE['darwin2']即可得到4维向量包括[x,y,高度z,自转角theta],其余同理
 STATE = {}
-FOOTBALL = [0, 0, 0]
 
 
 def ModelMSG(msg):
     global STATE
-    global FOOTBALL
     names = msg.name
     for i in range(len(names)):
         key = names[i]
@@ -29,16 +29,20 @@ def ModelMSG(msg):
         roll_q = msg.pose[i].orientation
         (_, _, theta) = euler_from_quaternion([roll_q.x, roll_q.y, roll_q.z, roll_q.w])
         STATE[key] = [x, y, z, theta]
-    rospy.loginfo(STATE)
+    rospy.loginfo(msg)
 
 
+# 目前控制的是在机器人自己的坐标系下的速度而非全局坐标系速度
+# 输出：4个rosbomasterEP机器人的[切向速度,垂直速度，自转速度]*4
 def robomaster_controller():
-    Velocity = np.ones(3 * 6) * 0.1
+    Velocity = np.array([1, 0, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0]) * 0.3
+    # Velocity = np.ones(3 * 4) * 0.1
     return Velocity
 
 
+# 输出：4个rosbomasterEP机器人的[切向速度,垂直速度，自转速度]*2，
 def darwin_controller():
-    Velocity = [0.1, 0.1, 0, -0.0, -0.2, 0.2]
+    Velocity = [0.1, 0, 0, 0.0, -0.2, 0]
     # Velocity = np.zeros(3 * 2)
     return Velocity
 
