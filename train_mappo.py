@@ -10,5 +10,6 @@ for i in range(100):
     EPvelocity = np.array([1, 0, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0]) * 0.3
     DWvelocity = np.array([0.1, 0, 0, 0.0, -0.2, 0])
     state, done, reward = env.step(EPvelocity, DWvelocity)
+    print(state, '\n')
 t2 = time.time()
 print('time = ', t2 - t1)

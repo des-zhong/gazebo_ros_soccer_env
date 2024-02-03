@@ -2,6 +2,7 @@ import rospy
 import time
 import os
 import subprocess
+import numpy as np
 from geometry_msgs.msg import Twist
 from gazebo_msgs.msg import ContactsState, ModelStates
 from tf.transformations import euler_from_quaternion
@@ -10,6 +11,9 @@ from my_robot_controller.src.walker import Walker
 from std_srvs.srv import Empty
 
 TIME_DELTA = 0.1
+
+# 球门长度除2
+gate_y = 0.5063
 
 
 class GazeboEnv:
@@ -60,7 +64,33 @@ class GazeboEnv:
             (_, _, theta) = euler_from_quaternion([roll_q.x, roll_q.y, roll_q.z, roll_q.w])
             self.state[key] = [x, y, z, theta]
 
+    # 判定球是否出界或进球门,flag=0表示正常，flag=-1表示出界，flag=1表示1队进球，2表示2队进球
+    def _terminate(self):
+        flag = 0
+        done = False
+        football = self.state['football']
+        [x, y, _, _] = football
+        if x < -3:
+            done = True
+            if -gate_y < y < gate_y:
+                flag = 2
+            else:
+                flag = -1
+            return done, flag
+        if x > 3:
+            done = True
+            if -gate_y < y < gate_y:
+                flag = 2
+            else:
+                flag = -1
+            return done, flag
+        if y > 3 or y < -3:
+            done = True
+            flag = -1
+        return done, flag
+
     def step(self, EPvelocity, DWvelocity):
+        reward = np.zeros(6)
         for i in range(4):
             ep_msg = Twist()
             ep_msg.linear.x = EPvelocity[i * 3]
@@ -85,12 +115,14 @@ class GazeboEnv:
 
         rospy.wait_for_service("/gazebo/pause_physics")
         try:
-            pass
             self.pause()
         except (rospy.ServiceException) as e:
             print("/gazebo/pause_physics service call failed")
-        done = False
-        reward = 1
+        done, flag = self._terminate()
+        if flag == 1:
+            reward += np.array([1, 1, 0, 0, 1, 0])
+        if flag == 2:
+            reward += np.array([0, 0, 1, 0, 0, 1])
         return self.state, done, reward
 
     def reset(self):
