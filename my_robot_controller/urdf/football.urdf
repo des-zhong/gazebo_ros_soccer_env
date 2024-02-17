@@ -1,0 +1,68 @@
+<?xml version="1.0" ?>
+<robot name="football">
+  <link name="football_chassis">
+    <inertial>
+      <mass value="0.0010"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="3.2e-7" ixy="0" ixz="0" iyy="3.2e-7" iyz="0" izz="3.2e-7"/>
+    </inertial>
+    <collision name="football__collision">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <sphere radius="0.028"/>
+      </geometry>
+      <surface>
+      <friction>
+        <torsional>
+          <coefficient>0.00001</coefficient>
+          <patch_radius>0.00001</patch_radius>
+        </torsional>
+        <ode>
+          <mu>50</mu>
+          <mu2>25</mu2>
+        </ode>
+      </friction>
+      <bounce>
+        <restitution_coefficient>0.0002</restitution_coefficient>
+        <threshold>1</threshold>
+      </bounce>
+      <contact>
+        <ode>
+          <max_vel>0.00001</max_vel>
+          <min_depth>0.00001</min_depth>
+        </ode>
+      </contact>
+    </surface>
+  </collision>
+  <visual name="football__visual">
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://my_robot_controller/deepsoccer_gazebo/meshes/ball.dae" scale="0.028 0.028 0.028"/>
+    </geometry>
+  </visual>
+  </link>
+
+
+<gazebo reference="football_chassis">
+    <sensor name="football_chassis_bumper_sensor" type="contact">
+      <always_on>true</always_on>
+      <update_rate>1000</update_rate>
+      <contact>
+        <collision>football__collision</collision>
+      </contact>
+      <plugin filename="libgazebo_ros_bumper.so" name="football_chassis_bumper_plugin">
+        <bumperTopicName>/football_chassis_bumper</bumperTopicName>
+        <frameName>base_link</frameName>
+      </plugin>
+    </sensor>
+    <gravity>true</gravity>
+  </gazebo>
+
+<gazebo>
+    <plugin name="gazebo_force_controller" filename="libgazebo_ros_force.so">
+            <bodyName>football_chassis</bodyName>
+            <topicName>/football/force</topicName>
+    </plugin>
+  </gazebo>	
+
+</robot>

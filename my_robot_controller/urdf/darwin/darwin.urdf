@@ -975,10 +975,10 @@
    <transmission name="t_j_pan">
     <type>transmission_interface/SimpleTransmission</type>
     <joint name="j_pan">
-        <hardwareInterface>EffortJointInterface</hardwareInterface>
+        <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
     </joint>
     <actuator name="m_j_pan">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
       <mechanicalReduction>1</mechanicalReduction>
     </actuator>
   </transmission>
@@ -987,7 +987,7 @@
    <transmission name="t_j_tilt">
     <type>transmission_interface/SimpleTransmission</type>
     <joint name="j_tilt">
-        <hardwareInterface>EffortJointInterface</hardwareInterface>
+        <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
     </joint>
     <actuator name="m_j_tilt">
       <hardwareInterface>EffortJointInterface</hardwareInterface>
@@ -999,10 +999,10 @@
    <transmission name="t_j_shoulder_l">
     <type>transmission_interface/SimpleTransmission</type>
     <joint name="j_shoulder_l">
-        <hardwareInterface>EffortJointInterface</hardwareInterface>
+        <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
     </joint>
     <actuator name="m_j_shoulder_l">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
       <mechanicalReduction>1</mechanicalReduction>
     </actuator>
   </transmission>
@@ -1011,10 +1011,10 @@
    <transmission name="t_j_high_arm_l">
     <type>transmission_interface/SimpleTransmission</type>
     <joint name="j_high_arm_l">
-        <hardwareInterface>EffortJointInterface</hardwareInterface>
+        <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
     </joint>
     <actuator name="m_j_high_arm_l">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
       <mechanicalReduction>1</mechanicalReduction>
     </actuator>
   </transmission>
@@ -1023,10 +1023,10 @@
    <transmission name="t_j_low_arm_l">
     <type>transmission_interface/SimpleTransmission</type>
     <joint name="j_low_arm_l">
-        <hardwareInterface>EffortJointInterface</hardwareInterface>
+        <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
     </joint>
     <actuator name="m_j_low_arm_l">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
       <mechanicalReduction>1</mechanicalReduction>
     </actuator>
   </transmission>
@@ -1035,10 +1035,10 @@
    <transmission name="t_j_wrist_l">
     <type>transmission_interface/SimpleTransmission</type>
     <joint name="j_wrist_l">
-        <hardwareInterface>EffortJointInterface</hardwareInterface>
+        <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
     </joint>
     <actuator name="m_j_wrist_l">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
       <mechanicalReduction>1</mechanicalReduction>
     </actuator>
   </transmission>
@@ -1047,10 +1047,10 @@
    <transmission name="t_j_gripper_l">
     <type>transmission_interface/SimpleTransmission</type>
     <joint name="j_gripper_l">
-        <hardwareInterface>EffortJointInterface</hardwareInterface>
+        <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
     </joint>
     <actuator name="m_j_gripper_l">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
       <mechanicalReduction>1</mechanicalReduction>
     </actuator>
   </transmission>
@@ -1059,10 +1059,10 @@
    <transmission name="t_j_shoulder_r">
     <type>transmission_interface/SimpleTransmission</type>
     <joint name="j_shoulder_r">
-        <hardwareInterface>EffortJointInterface</hardwareInterface>
+        <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
     </joint>
     <actuator name="m_j_shoulder_r">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
       <mechanicalReduction>1</mechanicalReduction>
     </actuator>
   </transmission>
@@ -1071,10 +1071,10 @@
    <transmission name="t_j_high_arm_r">
     <type>transmission_interface/SimpleTransmission</type>
     <joint name="j_high_arm_r">
-        <hardwareInterface>EffortJointInterface</hardwareInterface>
+        <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
     </joint>
     <actuator name="m_j_high_arm_r">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
       <mechanicalReduction>1</mechanicalReduction>
     </actuator>
   </transmission>
@@ -1083,10 +1083,10 @@
    <transmission name="t_j_low_arm_r">
     <type>transmission_interface/SimpleTransmission</type>
     <joint name="j_low_arm_r">
-        <hardwareInterface>EffortJointInterface</hardwareInterface>
+        <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
     </joint>
     <actuator name="m_j_low_arm_r">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
       <mechanicalReduction>1</mechanicalReduction>
     </actuator>
   </transmission>
@@ -1095,10 +1095,10 @@
    <transmission name="t_j_wrist_r">
     <type>transmission_interface/SimpleTransmission</type>
     <joint name="j_wrist_r">
-        <hardwareInterface>EffortJointInterface</hardwareInterface>
+        <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
     </joint>
     <actuator name="m_j_wrist_r">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
       <mechanicalReduction>1</mechanicalReduction>
     </actuator>
   </transmission>
@@ -1107,10 +1107,10 @@
    <transmission name="t_j_gripper_r">
     <type>transmission_interface/SimpleTransmission</type>
     <joint name="j_gripper_r">
-        <hardwareInterface>EffortJointInterface</hardwareInterface>
+        <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
     </joint>
     <actuator name="m_j_gripper_r">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
       <mechanicalReduction>1</mechanicalReduction>
     </actuator>
   </transmission>
@@ -1119,10 +1119,10 @@
    <transmission name="t_j_pelvis_l">
     <type>transmission_interface/SimpleTransmission</type>
     <joint name="j_pelvis_l">
-        <hardwareInterface>EffortJointInterface</hardwareInterface>
+        <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
     </joint>
     <actuator name="m_j_pelvis_l">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
       <mechanicalReduction>1</mechanicalReduction>
     </actuator>
   </transmission>
@@ -1131,10 +1131,10 @@
    <transmission name="t_j_thigh1_l">
     <type>transmission_interface/SimpleTransmission</type>
     <joint name="j_thigh1_l">
-        <hardwareInterface>EffortJointInterface</hardwareInterface>
+        <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
     </joint>
     <actuator name="m_j_thigh1_l">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
       <mechanicalReduction>1</mechanicalReduction>
     </actuator>
   </transmission>
@@ -1143,10 +1143,10 @@
    <transmission name="t_j_thigh2_l">
     <type>transmission_interface/SimpleTransmission</type>
     <joint name="j_thigh2_l">
-        <hardwareInterface>EffortJointInterface</hardwareInterface>
+        <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
     </joint>
     <actuator name="m_j_thigh2_l">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
       <mechanicalReduction>1</mechanicalReduction>
     </actuator>
   </transmission>
@@ -1155,10 +1155,10 @@
    <transmission name="t_j_tibia_l">
     <type>transmission_interface/SimpleTransmission</type>
     <joint name="j_tibia_l">
-        <hardwareInterface>EffortJointInterface</hardwareInterface>
+        <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
     </joint>
     <actuator name="m_j_tibia_l">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
       <mechanicalReduction>1</mechanicalReduction>
     </actuator>
   </transmission>
@@ -1167,10 +1167,10 @@
    <transmission name="t_j_ankle1_l">
     <type>transmission_interface/SimpleTransmission</type>
     <joint name="j_ankle1_l">
-        <hardwareInterface>EffortJointInterface</hardwareInterface>
+        <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
     </joint>
     <actuator name="m_j_ankle1_l">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
       <mechanicalReduction>1</mechanicalReduction>
     </actuator>
   </transmission>
@@ -1179,10 +1179,10 @@
    <transmission name="t_j_ankle2_l">
     <type>transmission_interface/SimpleTransmission</type>
     <joint name="j_ankle2_l">
-        <hardwareInterface>EffortJointInterface</hardwareInterface>
+        <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
     </joint>
     <actuator name="m_j_ankle2_l">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
       <mechanicalReduction>1</mechanicalReduction>
     </actuator>
   </transmission>
@@ -1191,10 +1191,10 @@
    <transmission name="t_j_pelvis_r">
     <type>transmission_interface/SimpleTransmission</type>
     <joint name="j_pelvis_r">
-        <hardwareInterface>EffortJointInterface</hardwareInterface>
+        <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
     </joint>
     <actuator name="m_j_pelvis_r">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
       <mechanicalReduction>1</mechanicalReduction>
     </actuator>
   </transmission>
@@ -1203,10 +1203,10 @@
    <transmission name="t_j_thigh1_r">
     <type>transmission_interface/SimpleTransmission</type>
     <joint name="j_thigh1_r">
-        <hardwareInterface>EffortJointInterface</hardwareInterface>
+        <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
     </joint>
     <actuator name="m_j_thigh1_r">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
       <mechanicalReduction>1</mechanicalReduction>
     </actuator>
   </transmission>
@@ -1215,10 +1215,10 @@
    <transmission name="t_j_thigh2_r">
     <type>transmission_interface/SimpleTransmission</type>
     <joint name="j_thigh2_r">
-        <hardwareInterface>EffortJointInterface</hardwareInterface>
+        <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
     </joint>
     <actuator name="m_j_thigh2_r">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
       <mechanicalReduction>1</mechanicalReduction>
     </actuator>
   </transmission>
@@ -1227,10 +1227,10 @@
    <transmission name="t_j_tibia_r">
     <type>transmission_interface/SimpleTransmission</type>
     <joint name="j_tibia_r">
-        <hardwareInterface>EffortJointInterface</hardwareInterface>
+        <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
     </joint>
     <actuator name="m_j_tibia_r">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
       <mechanicalReduction>1</mechanicalReduction>
     </actuator>
   </transmission>
@@ -1239,10 +1239,10 @@
    <transmission name="t_j_ankle1_r">
     <type>transmission_interface/SimpleTransmission</type>
     <joint name="j_ankle1_r">
-        <hardwareInterface>EffortJointInterface</hardwareInterface>
+        <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
     </joint>
     <actuator name="m_j_ankle1_r">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
       <mechanicalReduction>1</mechanicalReduction>
     </actuator>
   </transmission>
@@ -1251,10 +1251,10 @@
    <transmission name="t_j_ankle2_r">
     <type>transmission_interface/SimpleTransmission</type>
     <joint name="j_ankle2_r">
-        <hardwareInterface>EffortJointInterface</hardwareInterface>
+        <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
     </joint>
     <actuator name="m_j_ankle2_r">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
       <mechanicalReduction>1</mechanicalReduction>
     </actuator>
   </transmission>

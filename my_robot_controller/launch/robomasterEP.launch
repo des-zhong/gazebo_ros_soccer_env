@@ -38,6 +38,6 @@
             right_gripper_joint_6_controller
             right_gripper_joint_7_controller
             right_gripper_joint_5_controller
-            " 
+            "
     />
 </launch>
