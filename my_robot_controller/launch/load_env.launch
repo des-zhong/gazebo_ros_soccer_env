@@ -4,15 +4,17 @@
     <arg name="gui" default="true"/>
     <arg name="debug" default="false"/>
     <arg name="respawn_gazebo" default="true"/>
+
     <arg name="use_clock_frequency" default="false"/>
     <arg name="pub_clock_frequency" default="1000"/>
-
+    <arg name="physics" default="ode"/>
     <!-- 运行gazebo仿真环境 -->
     <include file="$(find gazebo_ros)/launch/empty_world.launch">
-    <arg name="world_name" value="$(find my_robot_controller)/deepsoccer.world"/>
+        <arg name="world_name" value="$(find my_robot_controller)/deepsoccer.world"/>
         <arg name="debug" value="$(arg debug)" />
         <arg name="gui" value="$(arg gui)" />
         <arg name="paused" value="$(arg paused)"/>
+        <arg name="physics" value="$(arg physics)"/>
         <arg name="use_sim_time" value="$(arg use_sim_time)"/>
         <arg name="respawn_gazebo" value="$(arg respawn_gazebo)"/>
         <arg name="use_clock_frequency" value="$(arg use_clock_frequency)"/>
@@ -20,12 +22,15 @@
     </include>
 
 
-
+  <include file="$(find my_robot_controller)/launch/spawn_football.launch" >
+  <arg name="init_pose" value="-x 0 -y 0 -z 0  -R 1 -P 2 -Y 0" />
+    <arg name="robot_name"  value="football" />
+  </include>
 
 <group ns="robot1">
   <param name="tf_prefix" value="robot1_tf" />
   <include file="$(find my_robot_controller)/launch/robomasterEP.launch" >
-    <arg name="init_pose" value="-x -1.3 -y 0.5063 -z 0  -R 0 -P 0 -Y 0.0" />
+    <arg name="init_pose" value="-x -1 -y 0 -z 0  -R 0 -P 0 -Y 0.0" />
     <arg name="robot_name"  value="robot1" />
   </include>
 </group>

@@ -1,0 +1,10 @@
+<launch>
+<arg name="robot_name"/>
+<arg name="init_pose"/>
+<param name="robot_description"
+        textfile="$(find my_robot_controller)/urdf/football.urdf"
+    />
+    <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model"
+     args="$(arg init_pose) -urdf -param robot_description -model $(arg robot_name)"
+     respawn="false" output="screen" />
+</launch>
