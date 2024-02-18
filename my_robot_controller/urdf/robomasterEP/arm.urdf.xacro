@@ -274,7 +274,7 @@
     </link>
 
     <joint name="${tf_prefix}arm_1_joint" type="fixed">
-      <origin xyz="0.0103961 -0.0255713 0.030741" rpy="0 0 0"/>
+      <origin xyz="0.0103961 -0.0255713 0.030741" rpy="0 1.3 0"/>
       <parent link="${tf_prefix}arm_base_link"/>
       <child link="${tf_prefix}arm_1_link"/>
       <axis xyz="0.0 1.0 0"/>
@@ -288,7 +288,7 @@
     </joint> -->
 
     <joint name="${tf_prefix}arm_2_joint" type="fixed">
-      <origin xyz="0.0018704 0.0438659 0.1210238" rpy="0 0 0"/>
+      <origin xyz="0.0018704 0.0438659 0.1210238" rpy="0 -0.5 0"/>
       <parent link="${tf_prefix}arm_1_link"/>
       <child link="${tf_prefix}arm_2_link"/>
       <axis xyz="0.0 1.0 0"/>
@@ -320,7 +320,7 @@
       <child link="${tf_prefix}end_point_link"/>
     </joint>
 
-    <joint name="${tf_prefix}endpoint_bracket_joint" type="continuous">
+    <joint name="${tf_prefix}endpoint_bracket_joint" type="fixed">
       <origin xyz="0.1058557 0.006752 -0.0561093" rpy="0 0 0"/>
       <parent link="${tf_prefix}arm_2_link"/>
       <child link="${tf_prefix}endpoint_bracket_link"/>
@@ -335,7 +335,7 @@
       <child link="rod_1_dummy"/>
     </joint> -->
 
-    <joint name="${tf_prefix}rod_1_joint" type="continuous">
+    <joint name="${tf_prefix}rod_1_joint" type="fixed">
       <origin xyz="0.0134583 -0.0540971 0.0213068" rpy="0 -0.021293 0"/>
       <parent link="${tf_prefix}endpoint_bracket_link"/>
       <child link="${tf_prefix}rod_1_link"/>
@@ -349,8 +349,8 @@
       <child link="rod_2_dummy"/>
     </joint> -->
 
-    <joint name="${tf_prefix}rod_2_joint" type="continuous">
-      <origin xyz="-0.0224276 -0.0290701 0.0554782" rpy="0 -0.0094248 0"/>
+    <joint name="${tf_prefix}rod_2_joint" type="fixed">
+      <origin xyz="-0.0224276 -0.0290701 0.0554782" rpy="0 1.3 0"/>
       <parent link="${tf_prefix}arm_base_link"/>
       <child link="${tf_prefix}rod_2_link"/>
       <axis xyz="0.0 1.0 0"/>
@@ -364,16 +364,16 @@
       <child link="rod_3_dummy"/>
     </joint> -->
 
-    <joint name="${tf_prefix}rod_3_joint" type="revolute">
-      <origin xyz="-0.042397 0.0004533 0.0223131" rpy="0 0 0"/>
+    <joint name="${tf_prefix}rod_3_joint" type="fixed">
+      <origin xyz="-0.042397 0.0004533 0.0223131" rpy="0 0.5 0"/>
       <parent link="${tf_prefix}rod_link"/>
       <child link="${tf_prefix}rod_3_link"/>
       <axis xyz="0.0 1.0 0"/>
       <limit effort="1" velocity="1" lower="-0.34732" upper="1.21475"/>
     </joint>
 
-    <joint name="${tf_prefix}rod_joint" type="revolute">
-      <origin xyz="0.009805 0.0214241 0.0319234" rpy="0 0 0"/>
+    <joint name="${tf_prefix}rod_joint" type="fixed">
+      <origin xyz="0.009805 0.0214241 0.0319234" rpy="0 0.8 0"/>
       <parent link="${tf_prefix}arm_base_link"/>
       <child link="${tf_prefix}rod_link"/>
       <axis xyz="0.0 1.0 0"/>
@@ -394,8 +394,8 @@
 
     
 
-    <joint name="${tf_prefix}triangle_joint" type="continuous">
-      <origin xyz="0.0020224 -0.007103 0.1212334" rpy="0 0.2502802 0"/>
+    <joint name="${tf_prefix}triangle_joint" type="fixed">
+      <origin xyz="0.0020224 -0.007103 0.1212334" rpy="0 -1.1 0"/>
       <parent link="${tf_prefix}arm_1_link"/>
       <child link="${tf_prefix}triangle_link"/>
       <axis xyz="0.0 1.0 0"/>
@@ -424,7 +424,7 @@
         </joint>
     </transmission> -->
 
-    <transmission name="${tf_prefix}endpoint_bracket_joint">
+    <!-- <transmission name="${tf_prefix}endpoint_bracket_joint">
         <type>transmission_interface/SimpleTransmission</type>
         <actuator name="$${tf_prefix}endpoint_bracket_joint">
             <mechanicalReduction>1</mechanicalReduction>
@@ -484,7 +484,7 @@
         <joint name="${tf_prefix}triangle_joint">
             <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
         </joint>
-    </transmission>
+    </transmission> -->
 
 
     </xacro:macro>

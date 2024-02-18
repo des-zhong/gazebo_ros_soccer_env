@@ -19,25 +19,8 @@
         pkg="controller_manager"
         type="spawner"
         args="
-            endpoint_bracket_joint_controller
-            rod_1_joint_controller
-            rod_2_joint_controller
-            rod_3_joint_controller
-            rod_joint_controller
-            triangle_joint_controller
-            gripper_m_joint_controller
             left_gripper_joint_1_controller
-            left_gripper_joint_2_controller
-            left_gripper_joint_4_controller
-            left_gripper_joint_6_controller
-            left_gripper_joint_7_controller
-            left_gripper_joint_5_controller
             right_gripper_joint_1_controller
-            right_gripper_joint_2_controller
-            right_gripper_joint_4_controller
-            right_gripper_joint_6_controller
-            right_gripper_joint_7_controller
-            right_gripper_joint_5_controller
             "
     />
 </launch>

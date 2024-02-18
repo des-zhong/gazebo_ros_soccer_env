@@ -165,7 +165,7 @@
 
       </link>
 
-      <joint name="${tf_prefix}gripper_m_joint" type="prismatic">
+      <joint name="${tf_prefix}gripper_m_joint" type="fixed">
         <limit effort="10000" velocity="1" lower="-0.023" upper="0.001"/>
         <origin xyz="0 0 0" rpy="0 0 0"/>
         <parent link="${tf_prefix}gripper_link"/>
@@ -320,15 +320,15 @@
           </inertial>
         </link> -->
 
-        <joint name="${tf_prefix}left_gripper_joint_1" type="continuous">
+        <joint name="${tf_prefix}left_gripper_joint_1" type="revolute">
           <origin xyz="0.0163032 0.0212032 -0.0399201" rpy="0 0 0"/>
           <parent link="${tf_prefix}gripper_m_link"/>
           <child link="${tf_prefix}left_gripper_link_1"/>
           <axis xyz="0 0 1.0"/>
-          <limit effort="1" velocity="1"/>
+          <limit effort="10" velocity="5" lower="-0.4" upper="0"/>
         </joint>
 
-        <joint name="${tf_prefix}left_gripper_joint_2" type="continuous">
+        <joint name="${tf_prefix}left_gripper_joint_2" type="fixed">
           <origin xyz="0.0213495 0.0130363 0" rpy="0 0 0"/>
           <parent link="${tf_prefix}left_gripper_link_1"/>
           <child link="${tf_prefix}left_gripper_link_2"/>
@@ -342,7 +342,7 @@
           <child link="left_gripper_link_3_dummy"/>
         </joint> -->
 
-        <joint name="${tf_prefix}left_gripper_joint_4" type="continuous">
+        <joint name="${tf_prefix}left_gripper_joint_4" type="fixed">
           <origin xyz="0.00485 0.0204148 -5.8e-06" rpy="0 0 0"/>
           <parent link="${tf_prefix}left_gripper_link_2"/>
           <child link="${tf_prefix}left_gripper_link_4"/>
@@ -350,7 +350,7 @@
           <limit effort="1" velocity="1"/>
         </joint>
 
-        <joint name="${tf_prefix}left_gripper_joint_6" type="continuous">
+        <joint name="${tf_prefix}left_gripper_joint_6" type="fixed">
           <origin xyz="0.0051144 -0.0140851 0" rpy="0 0 0"/>
           <parent link="${tf_prefix}left_gripper_link_5"/>
           <child link="${tf_prefix}left_gripper_link_6"/>
@@ -358,7 +358,7 @@
           <limit effort="1" velocity="1"/>
         </joint>
 
-        <joint name="${tf_prefix}left_gripper_joint_7" type="continuous">
+        <joint name="${tf_prefix}left_gripper_joint_7" type="fixed">
           <origin xyz="-0.0148823 -0.0168513 0" rpy="0 0 0"/>
           <parent link="${tf_prefix}left_gripper_link_6"/>
           <child link="${tf_prefix}left_gripper_link_7"/>
@@ -372,7 +372,7 @@
           <child link="left_gripper_8_link_dummy"/>
         </joint> -->
 
-        <joint name="${tf_prefix}left_gripper_joint_5" type="continuous">
+        <joint name="${tf_prefix}left_gripper_joint_5" type="fixed">
           <origin xyz="0.0385916 0.0103143 1.6e-06" rpy="0 0 0"/>
           <parent link="${tf_prefix}left_gripper_link_4"/>
           <child link="${tf_prefix}left_gripper_link_5"/>
@@ -381,20 +381,20 @@
         </joint>
 
         <joint name="${tf_prefix}gripper_joint" type="fixed">
-          <origin xyz="0.0002793 -0.027026 0.0001815" rpy="0 0 0"/>
+          <origin xyz="0.0002793 -0.027026 0.0001815" rpy="0 -0.8 0"/>
           <parent link="${tf_prefix}endpoint_bracket_link"/>
           <child link="${tf_prefix}gripper_link"/>
         </joint>
 
-        <joint name="${tf_prefix}right_gripper_joint_1" type="continuous">
+        <joint name="${tf_prefix}right_gripper_joint_1" type="revolute">
           <origin xyz="0.0163034 -0.0209781 -0.0399201" rpy="0 0 0"/>
           <parent link="${tf_prefix}gripper_m_link"/>
           <child link="${tf_prefix}right_gripper_link_1"/>
           <axis xyz="0 0 1.0"/>
-          <limit effort="1" velocity="1"/>
+          <limit effort="10" velocity="5" lower="0" upper="0.4"/>
         </joint>
 
-        <joint name="${tf_prefix}right_gripper_joint_2" type="continuous">
+        <joint name="${tf_prefix}right_gripper_joint_2" type="fixed">
           <origin xyz="0.0213495 -0.0130363 0" rpy="0 0 0"/>
           <parent link="${tf_prefix}right_gripper_link_1"/>
           <child link="${tf_prefix}right_gripper_link_2"/>
@@ -408,7 +408,7 @@
           <child link="right_gripper_link_3_dummy"/>
         </joint> -->
 
-        <joint name="${tf_prefix}right_gripper_joint_4" type="continuous">
+        <joint name="${tf_prefix}right_gripper_joint_4" type="fixed">
           <origin xyz="0.0047151 -0.0208481 -5.8e-06" rpy="0 0 0"/>
           <parent link="${tf_prefix}right_gripper_link_2"/>
           <child link="${tf_prefix}right_gripper_link_4"/>
@@ -416,7 +416,7 @@
           <limit effort="1" velocity="1"/>
         </joint>
 
-        <joint name="${tf_prefix}right_gripper_joint_5" type="continuous">
+        <joint name="${tf_prefix}right_gripper_joint_5" type="fixed">
           <origin xyz="0.0385916 -0.0103143 1.6e-06" rpy="0 0 0"/>
           <parent link="${tf_prefix}right_gripper_link_4"/>
           <child link="${tf_prefix}right_gripper_link_5"/>
@@ -424,7 +424,7 @@
           <limit effort="1" velocity="1"/>
         </joint>
 
-        <joint name="${tf_prefix}right_gripper_joint_6" type="continuous">
+        <joint name="${tf_prefix}right_gripper_joint_6" type="fixed">
           <origin xyz="0.0059278 0.0133069 0" rpy="0 0 0"/>
           <parent link="${tf_prefix}right_gripper_link_5"/>
           <child link="${tf_prefix}right_gripper_link_6"/>
@@ -432,7 +432,7 @@
           <limit effort="1" velocity="1"/>
         </joint>
 
-        <joint name="${tf_prefix}right_gripper_joint_7" type="continuous">
+        <joint name="${tf_prefix}right_gripper_joint_7" type="fixed">
           <origin xyz="-0.0156955 0.0176295 0" rpy="0 0 0"/>
           <parent link="${tf_prefix}right_gripper_link_6"/>
           <child link="${tf_prefix}right_gripper_link_7"/>
@@ -440,11 +440,6 @@
           <limit effort="1" velocity="1"/>
         </joint>
 
-        <!-- <joint name="right_gripper_joint_8_dummy" type="fixed">
-          <origin xyz="-0.0147421 0.0167196 -3.77e-05" rpy="0 0 0"/>
-          <parent link="right_gripper_link_7"/>
-          <child link="right_gripper_link_8_dummy"/>
-        </joint> -->
 
         <joint name="${tf_prefix}gripper_joint_t" type="fixed">
           <origin xyz="0.124 0 -0.039" rpy="0 0 0"/>
@@ -452,7 +447,7 @@
           <child link="${tf_prefix}gripper_t_link"/>
         </joint>
 
- <transmission name="${tf_prefix}gripper_m_joint">
+ <!-- <transmission name="${tf_prefix}gripper_m_joint">
         <type>transmission_interface/SimpleTransmission</type>
         <joint name="${tf_prefix}gripper_m_joint">
             <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
@@ -461,18 +456,19 @@
             <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
             <mechanicalReduction>1</mechanicalReduction>
         </actuator>
-    </transmission>
+    </transmission> -->
 
     <transmission name="${tf_prefix}left_gripper_joint_1">
         <type>transmission_interface/SimpleTransmission</type>
         <actuator name="$${tf_prefix}left_gripper_joint_1">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
             <mechanicalReduction>1</mechanicalReduction>
         </actuator>
         <joint name="${tf_prefix}left_gripper_joint_1">
-            <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
         </joint>
     </transmission>
-    <transmission name="${tf_prefix}left_gripper_joint_2">
+    <!-- <transmission name="${tf_prefix}left_gripper_joint_2">
         <type>transmission_interface/SimpleTransmission</type>
         <actuator name="$${tf_prefix}left_gripper_joint_2">
             <mechanicalReduction>1</mechanicalReduction>
@@ -516,18 +512,19 @@
         <joint name="${tf_prefix}left_gripper_joint_7">
             <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
         </joint>
-    </transmission>
+    </transmission> -->
 
     <transmission name="${tf_prefix}right_gripper_joint_1">
         <type>transmission_interface/SimpleTransmission</type>
         <actuator name="$${tf_prefix}right_gripper_joint_1">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
             <mechanicalReduction>1</mechanicalReduction>
         </actuator>
         <joint name="${tf_prefix}right_gripper_joint_1">
-            <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
         </joint>
     </transmission>
-    <transmission name="${tf_prefix}right_gripper_joint_2">
+    <!-- <transmission name="${tf_prefix}right_gripper_joint_2">
         <type>transmission_interface/SimpleTransmission</type>
         <actuator name="$${tf_prefix}right_gripper_joint_2">
             <mechanicalReduction>1</mechanicalReduction>
@@ -571,7 +568,7 @@
         <joint name="${tf_prefix}right_gripper_joint_7">
             <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
         </joint>
-    </transmission>
+    </transmission> -->
 
     
   </xacro:macro>
