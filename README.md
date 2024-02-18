@@ -53,5 +53,7 @@ python train_mappo.py
 <arg name="gui" default="false"/>
 ```
 
+文件说明：Command2Velocity脚本用于将离散的指令转化为gazebo_plugin脚本可以使用的速度
+
 场地设置：长6（x轴），宽4（y轴），球门设置在宽侧，宽度为1.126
 

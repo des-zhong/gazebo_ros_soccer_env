@@ -45,7 +45,7 @@
       <limit effort="30" velocity="1.0"/>
     </joint>
 
-    <transmission name="${name}_wheel_transimission">
+    <!-- <transmission name="${name}_wheel_transimission">
         <type>transmission_interface/SimpleTransmission</type>
         <actuator name="$${name}_motor">
             <mechanicalReduction>1</mechanicalReduction>
@@ -53,7 +53,7 @@
         <joint name="${tf_prefix}${name}_wheel_joint">
             <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
         </joint>
-    </transmission>
+    </transmission> -->
 
   </xacro:macro>
 
