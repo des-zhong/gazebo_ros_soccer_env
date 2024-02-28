@@ -12,13 +12,17 @@ catkin build
 ```
 
 最后文件数结构为：
-
 - ws
   - build
   - devel
   - logs
   - src
     - my_robot_controller
+
+由于world文件不支持相对路径因此需要复制环境文件deepsoccer_gazebo到.gazebo/models文件夹：
+```
+cp -r ./deepsoccer_gazebo ~/.gazebo/models
+```
 
 使用（每个终端都需要`source devel/setup.bash`后使用）：
 

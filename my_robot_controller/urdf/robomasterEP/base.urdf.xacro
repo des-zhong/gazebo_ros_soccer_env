@@ -12,7 +12,7 @@
     <link name="${tf_prefix}chassis_base_link">
       <inertial>
         <origin xyz="-0.0058789 -0.0001128 0.0294307" rpy="0 0 0"/>
-        <mass value="1.934"/>
+        <mass value="9.934"/>
         <inertia ixx="0.01451" ixy="0" ixz="0" iyy="0.00512" iyz="0" izz="0.01759"/>
       </inertial>
       <visual name="armor">
