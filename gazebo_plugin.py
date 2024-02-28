@@ -186,7 +186,7 @@ class GazeboEnv:
             vx = DWvelocity[i * 3]
             vy = DWvelocity[i * 3 + 1]
             w = DWvelocity[i * 3 + 2]
-            # self.darwin[i].set_walk_velocity(vx, vy, w)
+            self.darwin[i].set_walk_velocity(vx, vy, w)
 
         rospy.wait_for_service("/gazebo/unpause_physics")
         try:
