@@ -1,14 +1,19 @@
 配置：ubuntu20.04 5.15.0-91-generic, ros(neotic),gazebo 11
 
-安装：
+创建workspace：
 
 ```
 mkdir ws
 cd ws
 mkdir src
-git clone ...
-cd ..
-catkin build
+```
+下载项目
+```
+git clone https://github.com/des-zhong/gazebo_ros_soccer_env.git
+```
+将gazebo_ros_soccer_env文件下下所有文件移动至src文件夹中，进入ws文件夹路径进行编译：
+```
+catkin build -DPYTHON_EXECUTABLE=/usr/bin/python3
 ```
 
 最后文件数结构为：
@@ -18,8 +23,9 @@ catkin build
   - logs
   - src
     - my_robot_controller
+  - train.py
 
-由于world文件不支持相对路径因此需要复制环境文件deepsoccer_gazebo到.gazebo/models文件夹：
+由于world文件不支持相对路径因此需要复制环境文件deepsoccer_gazebo到.gazebo/models文件夹，进入ws/src/my_robot_controller路径：
 ```
 cp -r ./deepsoccer_gazebo ~/.gazebo/models
 ```
